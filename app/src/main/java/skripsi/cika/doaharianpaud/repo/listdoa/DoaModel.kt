@@ -4,5 +4,6 @@ data class DoaModel(
   val id: String,
   val doaName: String,
   val arabic: String,
-  val translate: String
+  val translate: String,
+  val meaning: String
 )
