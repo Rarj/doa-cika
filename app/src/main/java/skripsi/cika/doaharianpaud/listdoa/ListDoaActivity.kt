@@ -31,5 +31,7 @@ class ListDoaActivity : AppCompatActivity() {
       layoutManager = LinearLayoutManager(this@ListDoaActivity)
       adapter = this@ListDoaActivity.adapter
     }
+
+    binding.toolbar.setNavigationOnClickListener { finish() }
   }
 }
