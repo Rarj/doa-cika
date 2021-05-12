@@ -1,11 +1,12 @@
-package skripsi.cika.doaharianpaud
+package skripsi.cika.doaharianpaud.listdoa
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import skripsi.cika.doaharianpaud.R
 
-class MainActivity : AppCompatActivity() {
+class ListDoaActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    setContentView(R.layout.activity_list_doa)
   }
 }
