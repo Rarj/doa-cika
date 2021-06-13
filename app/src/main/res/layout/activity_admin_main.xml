@@ -11,13 +11,13 @@
       android:id="@+id/toolbar"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:background="@android:color/white"
+      android:backgroundTint="@color/purple_200"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:navigationIcon="@drawable/ic_arrow_back"
-      app:title="Daftar Doa"
-      app:titleTextColor="@android:color/black" />
+      app:menu="@menu/menu_admin"
+      app:title="Admin Dashboard"
+      app:titleTextColor="@android:color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/recycler_doa"

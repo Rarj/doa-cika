@@ -10,6 +10,7 @@ import skripsi.cika.doaharianpaud.databinding.ActivityAdminMainBinding
 import skripsi.cika.doaharianpaud.detaildoa.DetailDoaActivity
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaRepository
+import skripsi.cika.doaharianpaud.showToast
 
 class AdminMainActivity : AppCompatActivity() {
   private lateinit var listDoa: List<DoaModel>
@@ -31,11 +32,21 @@ class AdminMainActivity : AppCompatActivity() {
 
     listDoa = DoaRepository().getListDoa()
 
+    binding.toolbar.setOnMenuItemClickListener {
+      when (it.itemId) {
+        R.id.add_new_user -> {
+          showToast("add new user")
+        }
+        R.id.input_nilai -> {
+          showToast("input nilai murid")
+        }
+      }
+      return@setOnMenuItemClickListener true
+    }
+
     binding.recyclerDoa.apply {
       layoutManager = LinearLayoutManager(this@AdminMainActivity)
       adapter = this@AdminMainActivity.adapter
     }
-
-    binding.toolbar.setNavigationOnClickListener { finish() }
   }
 }

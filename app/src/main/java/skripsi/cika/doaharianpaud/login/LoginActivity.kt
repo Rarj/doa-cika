@@ -42,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
   }
 
   private fun showAdminScreen() {
+//    val sharedPrefUser = getSharedPreferences("PREF_USER", Context.MODE_PRIVATE)
+//    sharedPrefUser.edit(true) {
+//      putBoolean("IS_USER_LOGGEDIN", true)
+//    }
+
     startActivity(Intent(this, AdminMainActivity::class.java))
     finish()
   }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <group>
+    <item
+      android:id="@+id/add_new_user"
+      android:icon="@drawable/ic_new_user"
+      android:title="Tambah murid baru"
+      app:showAsAction="collapseActionView" />
+    <item
+      android:id="@+id/input_nilai"
+      android:icon="@drawable/ic_file"
+      android:title="Input nilai murid"
+      app:showAsAction="collapseActionView" />
+  </group>
+</menu>
