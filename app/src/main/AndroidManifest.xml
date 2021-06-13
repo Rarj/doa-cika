@@ -9,7 +9,8 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.DoaHarianPaud">
-    <activity android:name=".detaildoa.DetailDoaActivity"></activity>
+    <activity android:name=".login.LoginActivity"></activity>
+    <activity android:name=".detaildoa.DetailDoaActivity" />
     <activity android:name=".listdoa.ListDoaActivity" />
     <activity
       android:name=".MainActivity"
