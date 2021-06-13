@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import skripsi.cika.doaharianpaud.databinding.ItemDoaBinding
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 
-class ListDoaViewHolder(private val binding: ItemDoaBinding) :
+class AdminMainViewHolder(private val binding: ItemDoaBinding) :
   RecyclerView.ViewHolder(binding.root) {
   fun bind(model: DoaModel, clickListener: (doaModel: DoaModel) -> Unit) {
     binding.doaModel = model

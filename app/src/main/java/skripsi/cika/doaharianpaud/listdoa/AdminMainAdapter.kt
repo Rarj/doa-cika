@@ -6,22 +6,22 @@ import androidx.recyclerview.widget.RecyclerView
 import skripsi.cika.doaharianpaud.databinding.ItemDoaBinding
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 
-class ListDoaAdapter(
+class AdminMainAdapter(
   private val listDoa: List<DoaModel>,
   private val clickListener: (doaModel: DoaModel) -> Unit
-) : RecyclerView.Adapter<ListDoaViewHolder>() {
+) : RecyclerView.Adapter<AdminMainViewHolder>() {
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDoaViewHolder {
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdminMainViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val viewDataBinding = ItemDoaBinding.inflate(inflater, parent, false)
-    return ListDoaViewHolder(viewDataBinding)
+    return AdminMainViewHolder(viewDataBinding)
   }
 
   override fun getItemCount(): Int {
     return listDoa.size
   }
 
-  override fun onBindViewHolder(holder: ListDoaViewHolder, position: Int) {
+  override fun onBindViewHolder(holder: AdminMainViewHolder, position: Int) {
     holder.bind(listDoa[position], clickListener)
   }
 

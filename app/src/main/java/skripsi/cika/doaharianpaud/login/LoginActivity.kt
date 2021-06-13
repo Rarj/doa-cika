@@ -1,5 +1,6 @@
 package skripsi.cika.doaharianpaud.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
 import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.databinding.ActivityLoginBinding
+import skripsi.cika.doaharianpaud.listdoa.AdminMainActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
             binding.inputPassword.text.toString().equals("admin", ignoreCase = true)
 
       if (isAdmin) {
-        Toast.makeText(this, "show admin screen", Toast.LENGTH_SHORT).show()
+        showAdminScreen()
         return@setOnClickListener
       }
 
@@ -37,6 +39,11 @@ class LoginActivity : AppCompatActivity() {
 
       loginUser()
     }
+  }
+
+  private fun showAdminScreen() {
+    startActivity(Intent(this, AdminMainActivity::class.java))
+    finish()
   }
 
   private fun loginUser() {

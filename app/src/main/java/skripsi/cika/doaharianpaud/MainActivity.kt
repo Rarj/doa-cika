@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import skripsi.cika.doaharianpaud.databinding.ActivityMainBinding
-import skripsi.cika.doaharianpaud.listdoa.ListDoaActivity
+import skripsi.cika.doaharianpaud.listdoa.AdminMainActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
     binding.buttonDoa.setOnClickListener {
-      val intent = Intent(this, ListDoaActivity::class.java)
+      val intent = Intent(this, AdminMainActivity::class.java)
       startActivity(intent)
     }
 

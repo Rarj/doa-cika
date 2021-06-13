@@ -13,7 +13,7 @@
     android:theme="@style/Theme.DoaHarianPaud">
     <activity android:name=".MainActivity" />
     <activity android:name=".detaildoa.DetailDoaActivity" />
-    <activity android:name=".listdoa.ListDoaActivity" />
+    <activity android:name=".listdoa.AdminMainActivity" />
     <activity android:name=".login.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
