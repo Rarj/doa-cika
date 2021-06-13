@@ -6,9 +6,9 @@ import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 
 class ListDoaViewHolder(private val binding: ItemDoaBinding) :
   RecyclerView.ViewHolder(binding.root) {
-  fun bind(model: DoaModel, clickListener: (id: String) -> Unit) {
+  fun bind(model: DoaModel, clickListener: (doaModel: DoaModel) -> Unit) {
     binding.doaModel = model
 
-    binding.root.setOnClickListener { clickListener(model.id) }
+    binding.root.setOnClickListener { clickListener(model) }
   }
 }

@@ -8,7 +8,7 @@ import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 
 class ListDoaAdapter(
   private val listDoa: List<DoaModel>,
-  private val clickListener: (id: String) -> Unit
+  private val clickListener: (doaModel: DoaModel) -> Unit
 ) : RecyclerView.Adapter<ListDoaViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDoaViewHolder {
