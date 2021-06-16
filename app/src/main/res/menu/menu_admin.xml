@@ -12,5 +12,10 @@
       android:icon="@drawable/ic_file"
       android:title="Input nilai murid"
       app:showAsAction="collapseActionView" />
+    <item
+      android:id="@+id/logout"
+      android:icon="@drawable/ic_logout"
+      android:title="LOGOUT"
+      app:showAsAction="collapseActionView" />
   </group>
 </menu>

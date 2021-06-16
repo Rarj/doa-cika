@@ -1,5 +1,6 @@
 package skripsi.cika.doaharianpaud.admin
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.databinding.ActivityAdminMainBinding
 import skripsi.cika.doaharianpaud.detaildoa.DetailDoaActivity
+import skripsi.cika.doaharianpaud.login.LoginActivity
 import skripsi.cika.doaharianpaud.register.RegisterUserActivity
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaRepository
@@ -41,6 +43,15 @@ class AdminMainActivity : AppCompatActivity() {
         }
         R.id.input_nilai -> {
           showToast("input nilai murid")
+        }
+        R.id.logout -> {
+          getSharedPreferences("IS_USER_LOGIN", Context.MODE_PRIVATE)
+            .edit()
+            .remove("username")
+            .remove("pwd")
+            .apply()
+          startActivity(Intent(this, LoginActivity::class.java))
+          finishAffinity()
         }
       }
       return@setOnMenuItemClickListener true

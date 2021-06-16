@@ -1,9 +1,11 @@
 package skripsi.cika.doaharianpaud.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
 import skripsi.cika.doaharianpaud.R
@@ -26,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
             binding.inputPassword.text.toString().equals("admin", ignoreCase = true)
 
       if (isAdmin) {
+        saveLoginAdminIntoPref()
         showAdminScreen()
         return@setOnClickListener
       }
@@ -41,12 +44,14 @@ class LoginActivity : AppCompatActivity() {
     }
   }
 
-  private fun showAdminScreen() {
-//    val sharedPrefUser = getSharedPreferences("PREF_USER", Context.MODE_PRIVATE)
-//    sharedPrefUser.edit(true) {
-//      putBoolean("IS_USER_LOGGEDIN", true)
-//    }
+  private fun saveLoginAdminIntoPref() {
+    getSharedPreferences("IS_USER_LOGIN", MODE_PRIVATE).edit {
+      putString("username", "admin")
+      putString("pwd", "admin")
+    }
+  }
 
+  private fun showAdminScreen() {
     startActivity(Intent(this, AdminMainActivity::class.java))
     finish()
   }
@@ -61,6 +66,21 @@ class LoginActivity : AppCompatActivity() {
       }
     }.addOnFailureListener {
       Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+    }
+  }
+
+  override fun onStart() {
+    super.onStart()
+
+    val pref = getSharedPreferences("IS_USER_LOGIN", Context.MODE_PRIVATE)
+    val usernamePref = pref.getString("username", "")
+    if (usernamePref?.isNotBlank() == true && usernamePref.equals("admin", ignoreCase = true)) {
+      showAdminScreen()
+    } else {
+      val firebaseUser = firebaseAuth.currentUser
+      if (firebaseUser != null) {
+        Toast.makeText(this, "Berhasil login sebagain user ${firebaseUser.email}", Toast.LENGTH_SHORT).show()
+      }
     }
   }
 }
