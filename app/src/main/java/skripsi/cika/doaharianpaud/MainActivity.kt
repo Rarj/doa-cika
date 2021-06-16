@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import skripsi.cika.doaharianpaud.admin.AdminMainActivity
 import skripsi.cika.doaharianpaud.databinding.ActivityMainBinding
-import skripsi.cika.doaharianpaud.listdoa.AdminMainActivity
 
 class MainActivity : AppCompatActivity() {
 

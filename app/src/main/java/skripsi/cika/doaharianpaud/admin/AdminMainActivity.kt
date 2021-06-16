@@ -1,4 +1,4 @@
-package skripsi.cika.doaharianpaud.listdoa
+package skripsi.cika.doaharianpaud.admin
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.databinding.ActivityAdminMainBinding
 import skripsi.cika.doaharianpaud.detaildoa.DetailDoaActivity
+import skripsi.cika.doaharianpaud.register.RegisterUserActivity
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaRepository
 import skripsi.cika.doaharianpaud.showToast
@@ -35,7 +36,8 @@ class AdminMainActivity : AppCompatActivity() {
     binding.toolbar.setOnMenuItemClickListener {
       when (it.itemId) {
         R.id.add_new_user -> {
-          showToast("add new user")
+          val intent = Intent(this, RegisterUserActivity::class.java)
+          startActivity(intent)
         }
         R.id.input_nilai -> {
           showToast("input nilai murid")

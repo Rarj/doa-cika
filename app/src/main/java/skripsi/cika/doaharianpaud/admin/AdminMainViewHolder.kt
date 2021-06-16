@@ -1,4 +1,4 @@
-package skripsi.cika.doaharianpaud.listdoa
+package skripsi.cika.doaharianpaud.admin
 
 import androidx.recyclerview.widget.RecyclerView
 import skripsi.cika.doaharianpaud.databinding.ItemDoaBinding

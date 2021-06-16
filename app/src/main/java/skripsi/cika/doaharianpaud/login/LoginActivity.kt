@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
 import skripsi.cika.doaharianpaud.R
+import skripsi.cika.doaharianpaud.admin.AdminMainActivity
 import skripsi.cika.doaharianpaud.databinding.ActivityLoginBinding
-import skripsi.cika.doaharianpaud.listdoa.AdminMainActivity
 
 class LoginActivity : AppCompatActivity() {
 

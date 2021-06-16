@@ -14,7 +14,7 @@
     <activity android:name=".register.RegisterUserActivity"></activity>
     <activity android:name=".MainActivity" />
     <activity android:name=".detaildoa.DetailDoaActivity" />
-    <activity android:name=".listdoa.AdminMainActivity" />
+    <activity android:name=".admin.AdminMainActivity" />
     <activity android:name=".login.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package skripsi.cika.doaharianpaud.listdoa
+package skripsi.cika.doaharianpaud.admin
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
