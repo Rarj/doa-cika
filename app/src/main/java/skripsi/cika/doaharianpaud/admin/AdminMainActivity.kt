@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.databinding.ActivityAdminMainBinding
 import skripsi.cika.doaharianpaud.detaildoa.DetailDoaActivity
+import skripsi.cika.doaharianpaud.inputnilai.InputNilaiMuridActivity
 import skripsi.cika.doaharianpaud.login.LoginActivity
 import skripsi.cika.doaharianpaud.register.RegisterUserActivity
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaModel
 import skripsi.cika.doaharianpaud.repo.listdoa.DoaRepository
-import skripsi.cika.doaharianpaud.showToast
 
 class AdminMainActivity : AppCompatActivity() {
   private lateinit var listDoa: List<DoaModel>
@@ -42,7 +42,8 @@ class AdminMainActivity : AppCompatActivity() {
           startActivity(intent)
         }
         R.id.input_nilai -> {
-          showToast("input nilai murid")
+          val intent = Intent(this, InputNilaiMuridActivity::class.java)
+          startActivity(intent)
         }
         R.id.logout -> {
           getSharedPreferences("IS_USER_LOGIN", Context.MODE_PRIVATE)

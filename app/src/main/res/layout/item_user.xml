@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+      name="userModel"
+      type="skripsi.cika.doaharianpaud.model.UserModel" />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_user_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="@{userModel.studentName}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Cika savira" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

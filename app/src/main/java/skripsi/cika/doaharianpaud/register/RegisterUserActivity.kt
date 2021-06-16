@@ -47,6 +47,7 @@ class RegisterUserActivity : AppCompatActivity() {
             .setValue(
               UserModel(
                 it.user?.uid.toString(),
+                binding.inputStudentName.text.toString(),
                 binding.inputStudentDateOfBirth.text.toString(),
                 binding.inputParentName.text.toString(),
                 binding.inputAddress.text.toString(),

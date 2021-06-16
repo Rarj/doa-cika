@@ -6,9 +6,12 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class UserModel(
   val uid: String,
+  val studentName: String,
   val studentDateOfBirth: String,
   val parentName: String,
   val address: String,
   val parentPhoneNumber: String,
   val email: String
-) : Parcelable
+) : Parcelable {
+  constructor() : this("", "", "", "", "", "", "")
+}
