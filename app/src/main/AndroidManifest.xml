@@ -11,7 +11,8 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.DoaHarianPaud">
-    <activity android:name=".register.RegisterUserActivity"></activity>
+    <activity android:name=".inputnilai.InputNilaiMuridActivity"></activity>
+    <activity android:name=".register.RegisterUserActivity" />
     <activity android:name=".MainActivity" />
     <activity android:name=".detaildoa.DetailDoaActivity" />
     <activity android:name=".admin.AdminMainActivity" />
