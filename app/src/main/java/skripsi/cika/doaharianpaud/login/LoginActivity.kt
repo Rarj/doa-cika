@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.admin.AdminMainActivity
 import skripsi.cika.doaharianpaud.databinding.ActivityLoginBinding
+import skripsi.cika.doaharianpaud.student.StudentActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -51,6 +52,12 @@ class LoginActivity : AppCompatActivity() {
     }
   }
 
+  private fun saveLoginStudentIntoPref(uid: String) {
+    getSharedPreferences("IS_USER_LOGIN", MODE_PRIVATE).edit {
+      putString("username", uid)
+    }
+  }
+
   private fun showAdminScreen() {
     startActivity(Intent(this, AdminMainActivity::class.java))
     finish()
@@ -79,7 +86,9 @@ class LoginActivity : AppCompatActivity() {
     } else {
       val firebaseUser = firebaseAuth.currentUser
       if (firebaseUser != null) {
-        Toast.makeText(this, "Berhasil login sebagain user ${firebaseUser.email}", Toast.LENGTH_SHORT).show()
+        saveLoginStudentIntoPref(firebaseUser.uid)
+        startActivity(Intent(this, StudentActivity::class.java))
+        finishAffinity()
       }
     }
   }
