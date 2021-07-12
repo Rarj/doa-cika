@@ -23,6 +23,8 @@ class RegisterUserActivity : AppCompatActivity() {
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_register_user)
 
+    binding.toolbar.setNavigationOnClickListener { finish() }
+
     binding.buttonRegister.setOnClickListener {
       if (binding.inputEmail.text.toString().isNotEmpty() &&
         Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.text.toString()).matches()

@@ -69,7 +69,9 @@ class LoginActivity : AppCompatActivity() {
       binding.inputPassword.text.toString(),
     ).addOnSuccessListener {
       if (it.user != null) {
-        Toast.makeText(this, "Berhasil login sebagain user ${it.user?.email}", Toast.LENGTH_SHORT).show()
+        saveLoginStudentIntoPref(it.user!!.uid)
+        startActivity(Intent(this, StudentActivity::class.java))
+        finishAffinity()
       }
     }.addOnFailureListener {
       Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()

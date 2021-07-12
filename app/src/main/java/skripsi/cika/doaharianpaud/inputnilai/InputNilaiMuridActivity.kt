@@ -34,13 +34,13 @@ class InputNilaiMuridActivity : AppCompatActivity() {
           if (user != null) {
             userList.add(user)
           }
-
-          binding.recyclerUser.apply {
-            layoutManager = LinearLayoutManager(this@InputNilaiMuridActivity)
-            adapter = this@InputNilaiMuridActivity.adapter
-          }
-          adapter.notifyDataSetChanged()
         }
+
+        binding.recyclerUser.apply {
+          layoutManager = LinearLayoutManager(this@InputNilaiMuridActivity)
+          adapter = this@InputNilaiMuridActivity.adapter
+        }
+        adapter.notifyDataSetChanged()
       }
 
       override fun onCancelled(error: DatabaseError) {

@@ -1,8 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context=".student.StudentActivity">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+  <data>
+    <variable
+      name="userModel"
+      type="skripsi.cika.doaharianpaud.model.UserModel" />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".student.StudentActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="@color/purple_200"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:menu="@menu/menu_student"
+      app:navigationIcon="@drawable/ic_arrow_back"
+      app:titleTextColor="@android:color/black"
+      tools:text="Cika Savira" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_date_of_birth"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="@{`Tanggal Lahir : ` + userModel.studentDateOfBirth}"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_parent_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="@{`Nama Orang Tua : ` + userModel.parentName}"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_date_of_birth" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_address"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="@{`Alamat : ` + userModel.address}"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_parent_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_phone_number"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="@{`Nomor Telepon : ` + userModel.parentPhoneNumber}"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_address" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_email"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="@{`Email : ` + userModel.email}"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_phone_number" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_task_label"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:text="Tugas Murid"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textColor="@color/black"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_email" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recycler_task"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginBottom="16dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_task_label"
+      app:layout_constraintVertical_bias="0" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
