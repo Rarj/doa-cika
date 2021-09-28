@@ -15,6 +15,7 @@ import skripsi.cika.doaharianpaud.R
 import skripsi.cika.doaharianpaud.databinding.ActivityStudentBinding
 import skripsi.cika.doaharianpaud.login.LoginActivity
 import skripsi.cika.doaharianpaud.model.UserModel
+import skripsi.cika.doaharianpaud.uploadtugas.UploadTugasActivity
 
 class StudentActivity : AppCompatActivity() {
 
@@ -47,6 +48,10 @@ class StudentActivity : AppCompatActivity() {
         }
       }
       return@setOnMenuItemClickListener true
+    }
+
+    binding.buttonUpload.setOnClickListener {
+      startActivity(Intent(this, UploadTugasActivity::class.java))
     }
   }
 
